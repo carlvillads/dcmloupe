@@ -21,9 +21,13 @@ static int global_terminal_width = 0;
 static int global_val_col_start = 108; // start of VALUE column
 
 static void init_terminal_width(void) {
+#ifdef _WIN32
+    global_terminal_width = 90;
+#else
     struct winsize ws;
     if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == 0 && ws.ws_col > 0) { global_terminal_width = ws.ws_col; }
     else { global_terminal_width = 90; }
+#endif
 }
 
 typedef enum {
