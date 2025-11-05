@@ -1,6 +1,7 @@
 #ifndef DCMLOUPE_DICOM_HEADER_PARSER_H
 #define DCMLOUPE_DICOM_HEADER_PARSER_H
 
+#include <stdint.h>
 #include <stdbool.h>
 
 #define DEFAULT_MAX_ELEMENTS 250
