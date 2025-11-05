@@ -3,8 +3,11 @@
 #include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
-#include <sys/ioctl.h>
-#include <unistd.h>
+
+#ifndef _WIN32
+    #include <sys/ioctl.h>
+    #include <unistd.h>
+#endif
 
 #include "dicom_header_parser.h"
 #include "dicom_dict.h"
